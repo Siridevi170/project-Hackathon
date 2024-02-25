@@ -1,0 +1,24 @@
+17:51:35.585 [main] INFO  testCases.BaseClass - starting TestCase_001_StudentInsurance
+17:51:35.660 [main] INFO  testCases.BaseClass - Enter Student TravelInsurance Plan Details
+17:52:09.481 [main] INFO  testCases.BaseClass - Enter Car Insurance Plans Details
+17:52:39.902 [main] INFO  testCases.BaseClass - Error message Printed
+17:52:42.599 [main] INFO  testCases.BaseClass - Getting the list of Insurance Product Plans 
+17:52:42.731 [main] INFO  testCases.BaseClass - Getting the list of Insurance Product Plans 
+18:25:35.712 [main] INFO  testCases.BaseClass - starting TestCase_001_StudentInsurance
+18:25:35.784 [main] INFO  testCases.BaseClass - Enter Student TravelInsurance Plan Details
+18:26:08.991 [main] INFO  testCases.BaseClass - Enter Car Insurance Plans Details
+18:26:39.607 [main] INFO  testCases.BaseClass - Error message Printed
+18:26:41.382 [main] INFO  testCases.BaseClass - Getting the list of Insurance Product Plans 
+18:26:41.519 [main] INFO  testCases.BaseClass - Getting the list of Insurance Product Plans 
+21:31:16.760 [main] INFO  testCases.BaseClass - starting TestCase_001_StudentInsurance
+21:31:16.849 [main] INFO  testCases.BaseClass - Enter Student TravelInsurance Plan Details
+21:31:52.973 [main] INFO  testCases.BaseClass - Enter Car Insurance Plans Details
+21:32:23.432 [main] INFO  testCases.BaseClass - Error message Printed
+21:32:26.182 [main] INFO  testCases.BaseClass - Getting the list of Insurance Product Plans 
+21:32:26.337 [main] INFO  testCases.BaseClass - Getting the list of Insurance Product Plans 
+21:33:10.182 [main] INFO  testCases.TestCase_001_StudentInsuranceNavigation - starting TestCase_001_StudentInsurance
+21:33:10.258 [main] INFO  testCases.TestCase_001_StudentInsuranceNavigation - Enter Student TravelInsurance Plan Details
+21:33:49.196 [main] INFO  testCases.TestCase_001_StudentInsuranceNavigation - Enter Car Insurance Plans Details
+21:34:19.957 [main] INFO  testCases.TestCase_001_StudentInsuranceNavigation - Error message Printed
+21:34:22.460 [main] INFO  testCases.TestCase_001_StudentInsuranceNavigation - Getting the list of Insurance Product Plans 
+21:34:22.881 [main] INFO  testCases.TestCase_001_StudentInsuranceNavigation - Getting the list of Insurance Product Plans 
