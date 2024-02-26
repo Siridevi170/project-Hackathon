@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import utilityMethods.Excel;
+
 public class CarInsuranceNavigation  extends BasePage {
 	
 	
@@ -123,9 +125,8 @@ public class CarInsuranceNavigation  extends BasePage {
 		//String File = "C:\\Users\\2303757\\eclipse-workspace\\hackathon\\ExcelFile\\outputFile.xlsx";
 		System.out.println(errorMessage.getText());
 		 Thread.sleep(2000);
-		// Excel.setCellData(path,"Sheet1",1,1, errorMessage.getText());
-		//Excel.setCellData(path, "Sheet1", 2, 0,errorMessage.getText());
-		//driver.navigate().to("https://www.policybazaar.com/");
+		 Excel.setcelldata("Sheet1",errorMessage.getText() , 2, 0);
+		
 	}
 
 

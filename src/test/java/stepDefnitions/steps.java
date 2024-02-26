@@ -26,16 +26,24 @@ public class steps {
 	}
 
 	@When("User enters the studentInsurance Details")
-	public void user_enters_the_student_insurance_details() throws InterruptedException {
+	public void user_enters_the_student_insurance_details() throws InterruptedException, IOException {
 		
 		Details.VerifyInsurance();
+		Details.EnterDetails1();
+		Details.EnterDetails2();
+		Details.EnterDetails3();
+		Details.EnterDetails4();
+		Details.EnterDetails5();
+		Details.EnterDetails6();
+		Details.EnterDetails7();
+		Details.EnterDetails8();
 	    
 	}
 
 	@Then("Display the Top {int} Lowest Insurance Plans")
-	public void display_the_top_lowest_insurance_plans(Integer int1) throws InterruptedException {
+	public void display_the_top_lowest_insurance_plans(Integer int1) throws InterruptedException, IOException {
 		
-		Details.GetInsurancePlans();
+		Details.InsurancePlans();
 	    
 	}
 
@@ -50,6 +58,9 @@ public class steps {
 	public void user_provides_car_insurance_details() throws InterruptedException, IOException {
 		
 		navigateBack.CarInsurancePage();
+		navigateBack.CarInsurancePage2();
+		navigateBack.CarInsurancePage3();
+		navigateBack.CarInsurancePage4();
 	    
 	}
 
@@ -57,6 +68,7 @@ public class steps {
 	public void display_the_error_message() throws IOException, InterruptedException {
 		
 		navigateBack.displayErrorMessage();
+		navigateBack.displayErrorMessage2();
 	   
 	}
 

@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -18,8 +19,8 @@ public class Excel {
 	public static XSSFRow row;
 	public static XSSFCell cell;
 	public static XSSFCellStyle style;
-	static String file="C:\\Users\\2303757\\eclipse-workspace\\hackathon\\hackathon\\ExcelFile\\output.xlsx";
-	
+	static String file="C:\\Users\\2303757\\eclipse-workspace\\hackathon (2)\\hackathon\\hackathon\\ExcelFile\\output.xlsx";
+	static String path ="C:\\Users\\2303757\\eclipse-workspace\\hackathon (2)\\hackathon\\hackathon\\ExcelFile\\InputData.xlsx";
 	public static void setcelldata(String Sheet,String text,int r,int c) throws IOException {
 		fi=new FileInputStream(file);
 		wb=new XSSFWorkbook(fi);
@@ -37,6 +38,29 @@ public class Excel {
 		fi.close();
 		fo.close();
 	}
+	public static String getcelldata(String Sheet,int r,int c) throws IOException {
+		fi=new FileInputStream(path);
+		wb=new XSSFWorkbook(fi);
+		ws=wb.getSheet(Sheet);
+		row=ws.getRow(r);
+		cell=row.getCell(c);
+		String data;
+		try 
+		{
+			//data=cell.toString();
+			DataFormatter formatter = new DataFormatter();
+            data = formatter.formatCellValue(cell);
+            return data;
+		}
+		catch (Exception e) 
+		{
+			data="";
+		}
+		wb.close();
+		fi.close();
+		return data;
+	}
+
 
 	
 

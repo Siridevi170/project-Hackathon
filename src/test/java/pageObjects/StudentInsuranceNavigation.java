@@ -1,5 +1,6 @@
 package pageObjects;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,9 +10,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
+import utilityMethods.Excel;
+
+
 public class StudentInsuranceNavigation extends BasePage  {
 
-	
+	//String file = (System.getProperty("user.dir") + "/src/test/resources/Input.xlsx");
 	public StudentInsuranceNavigation(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
@@ -84,10 +88,10 @@ public class StudentInsuranceNavigation extends BasePage  {
 		   js23.executeScript("arguments[0].click()", travelInsurance);
 		//travelInsurance.click();
 	}
-	public void clickCountry()
+	public void clickCountry() throws IOException
 	{
 		searchbar.click();
-		searchbar.sendKeys("France");
+		searchbar.sendKeys(Excel.getcelldata("Sheet1", 1, 0));
 	}
 	public void clickCountryName()
 	{
@@ -161,9 +165,9 @@ public class StudentInsuranceNavigation extends BasePage  {
 		   js2.executeScript("window.scrollBy(0,200)");
 		   js2.executeScript("arguments[0].click()", nxt);
 	}
-	public void EnterMobile()
+	public void EnterMobile() throws IOException
 	{
-		mobile.sendKeys("77777888899");
+		mobile.sendKeys(Excel.getcelldata("Sheet1", 3, 0));
 	}
 	public void clickEnter()
 	{
@@ -225,23 +229,28 @@ public class StudentInsuranceNavigation extends BasePage  {
 		   js716.executeScript("arguments[0].click()", sortprice);
 		//sortprice.click();
 	}
-	public void printCompanyName()
+	public void printCompanyName() throws IOException
 	{
 		List<String> companyname = new ArrayList<String>();
 		   for(int i=0;i<3;i++) {
 			   companyname.add(company.get(i).getText());
+			   Excel.setcelldata("Sheet1",company.get(i).getText() , 0, i);
+			   
 			   
 		   }
-		   System.out.println(companyname);
+		  System.out.println(companyname);
 	}
-	public void printPrices() throws InterruptedException
+	public void printPrices() throws InterruptedException, IOException
 	{
 		List<String> prices = new ArrayList<String>();
 		   for(int i=0;i<3;i++) {
 			   prices.add(price.get(i).getText());
+			   Excel.setcelldata("Sheet1",price.get(i).getText() , 1, i);
+			   
 			  
 		   }
 		   System.out.println(prices);
+		   
 //		   driver.navigate().to("https://www.policybazaar.com/");
 		   Thread.sleep(1000);
 	}

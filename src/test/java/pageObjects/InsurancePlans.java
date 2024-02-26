@@ -44,7 +44,7 @@ public class InsurancePlans extends BasePage{
 			String plans = insurancePlans.get(i).getText();
 			
 		      System.out.println(plans);
-		     // Excel.setcelldata("Sheet1", plans, i, 0);
+		     Excel.setcelldata("Sheet1", plans, i+3, 0);
 	       
 //		try {
 //			Excel.writeToExcel("sheet1", plans, i + 1, 0);
