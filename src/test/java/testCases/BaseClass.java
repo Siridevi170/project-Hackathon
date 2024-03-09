@@ -1,19 +1,14 @@
 package testCases;
 
 import org.testng.annotations.AfterTest;
-
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.Date;
 import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -29,9 +24,10 @@ public class BaseClass {
 	public static WebDriver driver;
 	public static Logger logger;
 	public Properties p;
+	public static TakesScreenshot takesScreenshot;
 	
 	
-	@BeforeTest
+	@BeforeTest(groups= {"smoke Test one","regression Test One","smoke Test Two","regression Test Two","smoke Test Three","regression Test Three"})
 	@Parameters({"os","browser"})
     public  void setup(String os,String br) throws IOException
 	
@@ -78,6 +74,7 @@ public class BaseClass {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 		driver.get("https://www.policybazaar.com/");
+		takesScreenshot = (TakesScreenshot) driver;
 		
 	    }
 		else if(p.getProperty("execution_env").equalsIgnoreCase("local")) {
@@ -96,6 +93,8 @@ public class BaseClass {
 					driver.get("https://www.policybazaar.com/");
 				}
 			
+			takesScreenshot = (TakesScreenshot) driver;
+			
 		}
 		
 		
@@ -109,24 +108,10 @@ public class BaseClass {
 		
 		
 	}
-	public String captureScreen(String tname) throws IOException {
-
-		String timeStamp = new SimpleDateFormat("dd MMMM, yyyy").format(new Date());
-				
-		TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-		File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
-		
-		String targetFilePath=System.getProperty("user.dir")+"\\screenshots\\" + tname + "_" + timeStamp + ".png";
-		File targetFile=new File(targetFilePath);
-		
-		sourceFile.renameTo(targetFile);
-			
-		return targetFilePath;
-
-	}
 	
 	
-	@AfterTest
+	
+	@AfterTest(groups= {"smoke Test one","regression Test One","smoke Test Two","regression Test Two","smoke Test Three","regression Test Three"})
 	public void tearDown() {
 	
 		driver.close();

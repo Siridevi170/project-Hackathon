@@ -1,6 +1,7 @@
 package stepDefnitions;
 
 import java.io.IOException;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 
@@ -14,7 +15,8 @@ import testCases.TestCase_003_HealthInsurance;
 
 public class steps {
 	BaseClass setupclass = new BaseClass();
-	public WebDriver driver;
+	public  WebDriver driver;
+	Properties p;
 	TestCase_001_StudentInsuranceNavigation Details = new TestCase_001_StudentInsuranceNavigation();
 	TestCase_002_CarInsurance navigateBack = new TestCase_002_CarInsurance();
 	TestCase_003_HealthInsurance insurance = new TestCase_003_HealthInsurance();

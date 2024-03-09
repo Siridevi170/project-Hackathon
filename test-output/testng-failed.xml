@@ -8,12 +8,42 @@
     <parameter name="os" value="Windows"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.TestCase_001_StudentInsuranceNavigation">
+      <class name="testCases.TestCase_003_HealthInsurance">
         <methods>
           <include name="setup"/>
-          <include name="VerifyInsurance"/>
-          <include name="GetInsurancePlans"/>
+          <include name="NavigateHome"/>
+          <include name="HealthInsurancePage"/>
           <include name="tearDown"/>
+          <include name="DisplayList"/>
+        </methods>
+      </class> <!-- testCases.TestCase_003_HealthInsurance -->
+      <class name="testCases.TestCase_002_CarInsurance">
+        <methods>
+          <include name="displayErrorMessage2"/>
+          <include name="setup"/>
+          <include name="displayErrorMessage"/>
+          <include name="NavigatingBack"/>
+          <include name="tearDown"/>
+          <include name="CarInsurancePage4"/>
+          <include name="CarInsurancePage3"/>
+          <include name="CarInsurancePage2"/>
+          <include name="CarInsurancePage"/>
+        </methods>
+      </class> <!-- testCases.TestCase_002_CarInsurance -->
+      <class name="testCases.TestCase_001_StudentInsuranceNavigation">
+        <methods>
+          <include name="EnterDetails7"/>
+          <include name="EnterDetails4"/>
+          <include name="EnterDetails5"/>
+          <include name="setup"/>
+          <include name="VerifyInsurance"/>
+          <include name="EnterDetails2"/>
+          <include name="EnterDetails8"/>
+          <include name="EnterDetails6"/>
+          <include name="tearDown"/>
+          <include name="InsurancePlans"/>
+          <include name="EnterDetails3"/>
+          <include name="EnterDetails1"/>
         </methods>
       </class> <!-- testCases.TestCase_001_StudentInsuranceNavigation -->
     </classes>

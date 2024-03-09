@@ -27,7 +27,7 @@ public class InsurancePlans extends BasePage{
 	//public static String  path = "C:\\Users\\2303757\\OneDrive - Cognizant\\Pictures\\hackathon\\hackathon\\ExcelFile\\output.xlsx";
 	public void NavigateHome() throws InterruptedException {
 		driver.navigate().to("https://www.policybazaar.com/");
-		   Thread.sleep(1000);
+		  // Thread.sleep(1000);
 		
 	}
 	

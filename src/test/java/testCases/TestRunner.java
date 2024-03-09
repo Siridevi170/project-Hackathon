@@ -9,9 +9,9 @@ import io.cucumber.junit.CucumberOptions;
 			//features= {".//FeatureFiles/Feature.feature"},
 		features= {"C:\\Users\\2303757\\eclipse-workspace\\hackathon (2)\\hackathon\\hackathon\\src\\test\\resources\\FeatureFile\\Feature.feature"},
 			glue="stepDefnitions" ,
-			plugin= {"html:Reports/CucumberReport.html","rerun:target/rerun.txt",
+			plugin= {"html:Reports/CucumberReport.html",
 					  "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
-			
+			 
 			
 	 
 	public class TestRunner {
@@ -19,4 +19,4 @@ import io.cucumber.junit.CucumberOptions;
 	 
 	}
 
-
+//"rerun:target/rerun.txt"

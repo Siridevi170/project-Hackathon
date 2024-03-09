@@ -1,7 +1,12 @@
 package utilityMethods;
 
+import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -45,7 +50,7 @@ public class ExtentReportManager implements ITestListener
 		test = extent.createTest(result.getName()); // create a new entry in the report
 		test.log(Status.PASS, "Test case PASSED is:" + result.getName()); // update status p/f/s
 		try {
-			String imgPath = new BaseClass().captureScreen(result.getName());
+			String imgPath = captureScreen(result.getName());
 			test.addScreenCaptureFromPath(imgPath);
 			
 		} catch (IOException e1) {
@@ -60,7 +65,7 @@ public class ExtentReportManager implements ITestListener
 		test.log(Status.FAIL, "Test case FAILED is:" + result.getName());
 		test.log(Status.FAIL, "Test Case FAILED cause is: " + result.getThrowable()); 
 		try {
-			String imgPath = new BaseClass().captureScreen(result.getName());
+			String imgPath = captureScreen(result.getName());
 			test.addScreenCaptureFromPath(imgPath);
 			
 		} catch (IOException e1) {
@@ -80,6 +85,20 @@ public class ExtentReportManager implements ITestListener
 	public void onFinish(ITestContext context) {
 		
 		extent.flush();
+	}
+	
+	public static String captureScreen(String tname) throws IOException {
+		TakesScreenshot takesScreenshot = BaseClass.takesScreenshot;
+		String timeStamp = new SimpleDateFormat("dd MMMM, yyyy").format(new Date());
+		File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+		
+		String targetFilePath=System.getProperty("user.dir")+"\\screenshots\\" + tname + "_" + timeStamp + ".png";
+		File targetFile=new File(targetFilePath);
+		
+		sourceFile.renameTo(targetFile);
+			
+		return targetFilePath;
+
 	}
 		
 	

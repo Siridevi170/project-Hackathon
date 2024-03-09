@@ -13,7 +13,8 @@ public class TestCase_001_StudentInsuranceNavigation extends BaseClass{
 	
 	
 	
-	@Test(priority = 1)
+	
+	@Test(priority = 1,groups = {"smoke Test one"})
 	public void VerifyInsurance() throws InterruptedException, IOException{
 		
 //		driver = new EdgeDriver();
@@ -88,9 +89,10 @@ public class TestCase_001_StudentInsuranceNavigation extends BaseClass{
 //		
 //		
 		}
-	@Test(priority = 2)
+	@Test(priority = 2,groups = {"regression Test One"},dependsOnGroups = {"smoke Test one"})
 	public void EnterDetails1() throws InterruptedException, IOException {
 		StudentInsuranceNavigation navigation = new StudentInsuranceNavigation(driver);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		navigation.EnterStartDate(Calender.date1());
 		navigation.EnterEndDate(Calender.date2());
 		navigation.clickNext2();
@@ -100,9 +102,10 @@ public class TestCase_001_StudentInsuranceNavigation extends BaseClass{
 //		navigation.printPrices();
 		
 	}
-	@Test(priority = 3)
+	@Test(priority = 3,groups = {"regression Test One"})
 	public void EnterDetails2() throws InterruptedException, IOException {
 		StudentInsuranceNavigation navigation = new StudentInsuranceNavigation(driver);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		navigation.clickTravellers();
 		navigation.clickTraveller1();
 		navigation.selectTraveller1Age();
@@ -115,9 +118,10 @@ public class TestCase_001_StudentInsuranceNavigation extends BaseClass{
 //		navigation.printPrices();
 		
 	}
-	@Test(priority = 4)
+	@Test(priority = 4,groups = {"regression Test One"})
 	public void EnterDetails3() throws InterruptedException, IOException {
 		StudentInsuranceNavigation navigation = new StudentInsuranceNavigation(driver);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		navigation.clickYes();	
 		navigation.selectTraveller1();
 		navigation.selectTraveller2();
@@ -127,45 +131,51 @@ public class TestCase_001_StudentInsuranceNavigation extends BaseClass{
 //		navigation.printPrices();
 		
 	}
-	@Test(priority = 5)
+	@Test(priority = 5,groups = {"regression Test One"})
 	public void EnterDetails4() throws InterruptedException, IOException {
 		StudentInsuranceNavigation navigation = new StudentInsuranceNavigation(driver);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		navigation.EnterMobile();
 		navigation.clickEnter();
 //		navigation.printCompanyName();
 //		navigation.printPrices();
 		
 	}
-	@Test(priority = 6)
+	@Test(priority = 6,groups = {"regression Test One"})
 	public void EnterDetails5() throws InterruptedException, IOException {
 		StudentInsuranceNavigation navigation = new StudentInsuranceNavigation(driver);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		navigation.selectPlan();
 		
 	}
-	@Test(priority = 7)
+	@Test(priority = 7,groups = {"regression Test One"})
 	public void EnterDetails6() throws InterruptedException, IOException {
 		StudentInsuranceNavigation navigation = new StudentInsuranceNavigation(driver);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		navigation.selectTraveller1CheckBox();
 		navigation.selectTraveller2CheckBox();
 		
 	}
-	@Test(priority = 8)
+	@Test(priority = 8,groups = {"regression Test One"})
 	public void EnterDetails7() throws InterruptedException, IOException {
 		StudentInsuranceNavigation navigation = new StudentInsuranceNavigation(driver);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		navigation.selectTravelDuration();
 		navigation.clickApply();
 		
 	}
-	@Test(priority = 9)
+	@Test(priority = 9,groups = {"regression Test One"})
 	public void EnterDetails8() throws InterruptedException, IOException {
 		StudentInsuranceNavigation navigation = new StudentInsuranceNavigation(driver);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		navigation.sortFilter();
 		navigation.clickSortPrice();
 		
 	}
-	@Test(priority = 10)
+	@Test(priority = 10,groups = {"regression Test One"})
 	public void InsurancePlans() throws InterruptedException, IOException {
 		StudentInsuranceNavigation navigation = new StudentInsuranceNavigation(driver);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		
 		navigation.printCompanyName();
 		navigation.printPrices();

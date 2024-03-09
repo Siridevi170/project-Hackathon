@@ -122,12 +122,12 @@ public class StudentInsuranceNavigation extends BasePage  {
 	public void clickTraveller1() throws InterruptedException
 	{
 		traveller1.click();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 	}
 	public void selectTraveller1Age() throws InterruptedException
 	{
 		traveller1age.click();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 	}
 	public void clickTraveller2() throws InterruptedException
 	{
@@ -137,7 +137,7 @@ public class StudentInsuranceNavigation extends BasePage  {
 	public void selectTraveller2Age() throws InterruptedException
 	{
 		traveller2age.click();
-		Thread.sleep(2000);
+	//	Thread.sleep(2000);
 	}
 	public void clickNextButton()
 	{
@@ -178,7 +178,7 @@ public class StudentInsuranceNavigation extends BasePage  {
 		JavascriptExecutor js18 = (JavascriptExecutor)driver;
 		   
 		   js18.executeScript("arguments[0].click()", plan);
-		   Thread.sleep(2000);
+		  Thread.sleep(2000);
 		//plan.click();
 	}
 	public void selectTraveller1CheckBox() throws InterruptedException
@@ -194,7 +194,7 @@ public class StudentInsuranceNavigation extends BasePage  {
 		JavascriptExecutor js9 = (JavascriptExecutor)driver;
 		   
 		   js9.executeScript("arguments[0].click()", clickingtraveller2);
-		   Thread.sleep(2000);
+		  Thread.sleep(2000);
 		//traveller2.click();
 	}
 	public void selectTravelDuration()
@@ -207,7 +207,7 @@ public class StudentInsuranceNavigation extends BasePage  {
 		JavascriptExecutor js7 = (JavascriptExecutor)driver;
 		   
 		   js7.executeScript("arguments[0].click()", apply);
-		   //Thread.sleep(2000);
+		   Thread.sleep(2000);
 		//apply.click();
 	}
 	public void sortFilter() throws InterruptedException
@@ -252,7 +252,7 @@ public class StudentInsuranceNavigation extends BasePage  {
 		   System.out.println(prices);
 		   
 //		   driver.navigate().to("https://www.policybazaar.com/");
-		   Thread.sleep(1000);
+		 //  Thread.sleep(1000);
 	}
 
 
